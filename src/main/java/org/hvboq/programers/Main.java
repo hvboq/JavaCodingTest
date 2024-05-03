@@ -1,4 +1,4 @@
-package org.hvboq;
+package org.hvboq.programers;
 
 public class Main {
     public static void main(String[] args) {

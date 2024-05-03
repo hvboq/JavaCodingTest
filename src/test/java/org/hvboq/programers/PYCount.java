@@ -1,4 +1,4 @@
-package org.hvboq;
+package org.hvboq.programers;
 
 import org.junit.jupiter.api.Test;
 
