@@ -3,8 +3,6 @@ package org.hvboq.leetcode;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.Stack;
-
 public class q2AddtwoNumbers {
 //    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 //        ListNode l1CurrentNode = l1;
@@ -42,12 +40,10 @@ public class q2AddtwoNumbers {
 //    }
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode headNode = new ListNode();
-        ListNode currentNode = headNode;
-        headNode.next = currentNode;
+        ListNode front = null;
+        ListNode rear = null;
 
         boolean olim = false;
-        Stack<Integer> answerStack = new Stack<>();
         while (l1 != null || l2 != null || olim) {
             int currentInteger = olim ? 1 : 0;
             if (l1 != null) {
@@ -65,11 +61,16 @@ public class q2AddtwoNumbers {
                 olim = false;
             }
 
-            currentNode.next = new ListNode(currentInteger);
-            currentNode = currentNode.next;
+            if (front == null) {
+                front = new ListNode(currentInteger);
+                rear = front;
+            } else {
+                rear.next = new ListNode(currentInteger);
+                rear = rear.next;
+            }
         }
 
-        return headNode.next;
+        return front;
     }
 
     @Test
