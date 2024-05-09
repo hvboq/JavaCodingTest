@@ -39,7 +39,6 @@ public class q7576Tomato {
                         day = tomato.day + 1;
                         ripeTomatos.add(
                                 new Tomato(tomato.x + xValues[i], tomato.y + yValues[i], day));
-
                     }
                 }
             }
