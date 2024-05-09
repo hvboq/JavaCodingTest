@@ -11,14 +11,7 @@ public class treeAndDFSBFS {
     @Test
     @DisplayName("treeAndDFSBFS")
     void test() {
-        Node<Integer>[] childern1 = new Node[3];
-        Node<Integer>[] childern2 = new Node[2];
-        childern2[0] = new Node<>(5, null);
-        childern2[1] = new Node<>(6, null);
-        childern1[0] = new Node<>(2, childern2);
-        childern1[1] = new Node<>(3, null);
-        childern1[2] = new Node<>(4, null);
-        Node<Integer> root = new Node<>(1, childern1);
+        Node<Integer> root = new Node<>(1, new Node[]{new Node<>(2, new Node[]{new Node<>(5, null), new Node<>(6, null)}), new Node<>(3, null), new Node<>(4, null)});
         DFS(root);
         System.out.println();
         DFSWithStack(root);
