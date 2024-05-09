@@ -8,29 +8,15 @@ public class q165CompareVersionNumbers {
         String[] stringArrVersion1 = version1.split("\\.");
         String[] stringArrVersion2 = version2.split("\\.");
 
-        int minLength = Math.min(stringArrVersion1.length, stringArrVersion2.length);
-        for (int i = 0; i < minLength; i++) {
-            int v1 = Integer.parseInt(stringArrVersion1[i]);
-            int v2 = Integer.parseInt(stringArrVersion2[i]);
+        int maxLength = Math.max(stringArrVersion1.length, stringArrVersion2.length);
+        for (int i = 0; i < maxLength; i++) {
+            int v1 = i < stringArrVersion1.length ? Integer.parseInt(stringArrVersion1[i]) : 0;
+            int v2 = i < stringArrVersion2.length ? Integer.parseInt(stringArrVersion2[i]) : 0;
 
             if (v1 > v2) {
                 return 1;
             } else if (v1 < v2) {
                 return -1;
-            }
-        }
-
-        if (stringArrVersion1.length > stringArrVersion2.length) {
-            for (int i = minLength; i < stringArrVersion1.length; i++) {
-                if (Integer.parseInt(stringArrVersion1[i]) != 0) {
-                    return 1;
-                }
-            }
-        } else {
-            for (int i = minLength; i < stringArrVersion2.length; i++) {
-                if (Integer.parseInt(stringArrVersion2[i]) != 0) {
-                    return -1;
-                }
             }
         }
         return 0;
