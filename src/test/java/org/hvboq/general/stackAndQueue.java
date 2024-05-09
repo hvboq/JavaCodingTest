@@ -16,6 +16,7 @@ public class stackAndQueue {
         stack.push(2);
         stack.push(3);
         stack.push(4);
+        System.out.println(stack.peek());
         while (!stack.empty()) {
             System.out.println(stack.pop());
         }
@@ -26,6 +27,7 @@ public class stackAndQueue {
         javaStack.push(Integer.valueOf(2));
         javaStack.push(Integer.valueOf(3));
         javaStack.push(Integer.valueOf(4));
+        System.out.println(javaStack.peek());
         while (!javaStack.empty()) {
             System.out.println(javaStack.pop().intValue());
         }
@@ -36,6 +38,7 @@ public class stackAndQueue {
         queue.offer(2);
         queue.offer(3);
         queue.offer(4);
+        System.out.println(queue.peek());
         while (!queue.isEmpty()) {
             System.out.println(queue.poll());
         }
@@ -45,6 +48,7 @@ public class stackAndQueue {
         javaQueue.offer(2);
         javaQueue.offer(3);
         javaQueue.offer(4);
+        System.out.println(javaQueue.peek());
         while (!javaQueue.isEmpty()) {
             System.out.println(javaQueue.poll());
         }
